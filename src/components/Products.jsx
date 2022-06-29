@@ -12,12 +12,6 @@ const Container = styled.div`
   justify-content: space-evenly;
   padding: 1%;
 `
-const Title = styled.h1`
-  font-size: 3rem;
-  width: 100%;
-  text-align: center;
-  font-weight: 400;
-`
 
 const Products = ({ category, filters, sort }) => {
   const [products, setProducts] = useState([]);
@@ -68,7 +62,7 @@ const Products = ({ category, filters, sort }) => {
       {
       category
         ? filteredProducts.map((item) => <ProductItem item={item} key={item.id} />)
-        : products
+        : popularProducts
             .slice(0, 8)
             .map((item) => <ProductItem item={item} key={item.id} />)
       }
